@@ -1,0 +1,26 @@
+.stat-section {
+  grid-area: stats;
+}
+.shadow-section {
+  grid-area: shadow;
+}
+.home-section {
+  grid-area: home;
+}
+.hand-section {
+  grid-area: hand;
+}
+
+.game-wrapper {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 10% 35% 55%;
+  grid-template-areas:
+    "stats stats"
+    "hand hand"
+    "shadow home";
+  /* grid-gap: 10px; */
+  background-color: #2196f3;
+}

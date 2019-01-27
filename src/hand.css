@@ -1,0 +1,11 @@
+.card-well {
+  border: thin solid rgb(27, 27, 27);
+  background-color: rgb(218, 218, 218);
+  padding: 0.15em;
+}
+
+.hand {
+  /* flex-direction: row; */
+  /* align-items: stretch; */
+  display: grid;
+}

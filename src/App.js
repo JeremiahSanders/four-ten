@@ -1,28 +1,18 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import { GameArea } from "./game-area";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+export function App() {
+  const hand = {
+    cards: [{ value: 4 }, { value: 2 }]
+  };
+  const shadow = {
+    cards: [{ value: 1 }, { value: 1 }, { value: 1 }]
+  };
+  const home = {
+    cards: [{ value: 4 }, { value: 3 }, { value: 1 }]
+  };
+  return <GameArea hand={hand} shadow={shadow} home={home} />;
 }
 
 export default App;
