@@ -7,10 +7,10 @@ function getPossibleCardValue(array, index) {
 }
 
 function CardHolder({ children }) {
-  return <span className="card-well">{children}</span>;
+  return <div className="card-well">{children}</div>;
 }
 
-export function Hand({ cards = [], className = "" }) {
+export function Hand({ cards = [], className = "", title = "" }) {
   const card1 = cards[0] ? (
     <CardHolder>
       <Card value={cards[0].value} />
@@ -47,12 +47,15 @@ export function Hand({ cards = [], className = "" }) {
     getPossibleCardValue(cards, 3);
 
   return (
-    <div className={`hand ${className}`}>
-      {card1}
-      {card2}
-      {card3}
-      {card4}
-      <label>Total: {totalValue}</label>
+    <div className={`hand-wrapper ${className}`}>
+      <div className="hand-title">{title}</div>
+      <div className="hand-total">Total: {totalValue}</div>
+      <div className={`hand`}>
+        {card1}
+        {card2}
+        {card3}
+        {card4}
+      </div>
     </div>
   );
 }

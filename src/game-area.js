@@ -7,9 +7,9 @@ export function GameArea({ hand = {}, shadow = {}, home = {} }) {
   return (
     <div className="game-wrapper">
       <StatBlock className="stat-section" />
-      <Hand cards={hand.cards} className="hand-section" />
-      <Hand cards={shadow.cards} className="shadow-section" />
-      <Hand cards={home.cards} className="home-section" />
+      <Hand cards={hand.cards} className="hand-section" title="Hand" />
+      <Hand cards={shadow.cards} className="shadow-section" title="Shadow" />
+      <Hand cards={home.cards} className="home-section" title="Home" />
     </div>
   );
 }

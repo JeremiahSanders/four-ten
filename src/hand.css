@@ -5,7 +5,31 @@
 }
 
 .hand {
-  /* flex-direction: row; */
-  /* align-items: stretch; */
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.hand-wrapper {
   display: grid;
+  padding: 0.2em;
+  grid-template-rows: 1em 1em auto;
+  background-color: rgb(3, 10, 43);
+  margin: 0.25em;
+  justify-content: space-evenly;
+}
+
+.hand-title,
+.hand-total {
+  color: bisque;
+}
+
+.hand-title {
+  font-size: 0.8em;
+}
+.hand-total {
+  font-size: 0.75em;
+}
+
+.safety.filled {
+  color: rgb(9, 70, 9);
 }
