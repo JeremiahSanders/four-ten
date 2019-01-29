@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card } from "./card";
+import { Card, FlippedCard } from "./card";
 import "./hand.css";
 
 function getPossibleCardValue(array, index) {
@@ -16,29 +16,29 @@ export function Hand({ cards = [], className = "", title = "" }) {
       <Card value={cards[0].value} />
     </CardHolder>
   ) : (
-    <CardHolder>&nbsp;</CardHolder>
-  );
+      <CardHolder><FlippedCard /></CardHolder>
+    );
   const card2 = cards[1] ? (
     <CardHolder>
       <Card value={cards[1].value} />
     </CardHolder>
   ) : (
-    <CardHolder>&nbsp;</CardHolder>
-  );
+      <CardHolder><FlippedCard /></CardHolder>
+    );
   const card3 = cards[2] ? (
     <CardHolder>
       <Card value={cards[2].value} />
     </CardHolder>
   ) : (
-    <CardHolder>&nbsp;</CardHolder>
-  );
+      <CardHolder><FlippedCard /></CardHolder>
+    );
   const card4 = cards[3] ? (
     <CardHolder>
       <Card value={cards[3].value} />
     </CardHolder>
   ) : (
-    <CardHolder>&nbsp;</CardHolder>
-  );
+      <CardHolder><FlippedCard /></CardHolder>
+    );
 
   const totalValue =
     getPossibleCardValue(cards, 0) +

@@ -163,8 +163,40 @@ function One() {
     </g>
   );
 }
-
-export function Card({ value = 0 }) {
+export function FlippedCard({ onClick }) {
+  const cardRectangleStyle = {
+    fill: "#1b3353",
+    fillOpacity: 1,
+    stroke: "#21200b",
+    strokeWidth: 0.5291667,
+    strokeLinecap: "butt",
+    strokeLinejoin: "bevel",
+    strokeMiterlimit: 4,
+    strokeDasharray: "none",
+    strokeOpacity: 1,
+    paintOrder: "normal"
+  };
+  return (
+    <svg
+      version="1.1"
+      viewBox="0 0 38.029167 50.529167"
+      height="50.529167mm"
+      width="38.029167mm"
+      onClick={onClick}
+    >
+      <rect
+        style={cardRectangleStyle}
+        width="37.5"
+        height="50"
+        x="0.26458374"
+        y="0.26458362"
+        rx="2.5"
+        ry="2.5"
+      />
+    </svg>
+  );
+}
+export function Card({ onClick, value = 0 }) {
   let path;
   switch (value) {
     case 1:
@@ -203,6 +235,7 @@ export function Card({ value = 0 }) {
       viewBox="0 0 38.029167 50.529167"
       height="50.529167mm"
       width="38.029167mm"
+      onClick={onClick}
     >
       <rect
         style={cardRectangleStyle}
