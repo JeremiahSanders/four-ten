@@ -11,34 +11,21 @@ function CardHolder({ children }) {
 }
 
 export function Hand({ cards = [], className = "", title = "" }) {
-  const card1 = cards[0] ? (
-    <CardHolder>
-      <Card value={cards[0].value} />
-    </CardHolder>
-  ) : (
-      <CardHolder><FlippedCard /></CardHolder>
+  const cardSize = "5em";
+  const cardBuilder = index => cards[index]
+    ? (
+      <CardHolder>
+        <Card size={cardSize} value={cards[index].value} />
+      </CardHolder>
+    ) : (
+      <CardHolder>
+        <FlippedCard size={cardSize} />
+      </CardHolder>
     );
-  const card2 = cards[1] ? (
-    <CardHolder>
-      <Card value={cards[1].value} />
-    </CardHolder>
-  ) : (
-      <CardHolder><FlippedCard /></CardHolder>
-    );
-  const card3 = cards[2] ? (
-    <CardHolder>
-      <Card value={cards[2].value} />
-    </CardHolder>
-  ) : (
-      <CardHolder><FlippedCard /></CardHolder>
-    );
-  const card4 = cards[3] ? (
-    <CardHolder>
-      <Card value={cards[3].value} />
-    </CardHolder>
-  ) : (
-      <CardHolder><FlippedCard /></CardHolder>
-    );
+  const card1 = cardBuilder(0);
+  const card2 = cardBuilder(1);
+  const card3 = cardBuilder(2);
+  const card4 = cardBuilder(3);
 
   const totalValue =
     getPossibleCardValue(cards, 0) +
